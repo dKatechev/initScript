@@ -11,13 +11,7 @@ function Download-Putty
 	$appToMatch = '*PuTTY*'
 	$result = Get-InstalledApps | where {$_.DisplayName -like $appToMatch -and $_.DisplayVersion -as [Double] -lt $puttyVersion}
 	If ($result -eq $null) {
-#		[Boolean] $is64 = [System.Environment]::Is64BitOperatingSystem
-#		[String] $puttyDownloadUrl
-#		if($is64) {
-			$puttyDownloadUrl = "https://the.earth.li/~sgtatham/putty/" + $puttyVersion + "/w64/putty-64bit-" + $puttyVersion + "-installer.msi"
-#		} else {
-#			$puttyDownloadUrl = "https://the.earth.li/~sgtatham/putty/" + $puttyVersion + "/w32/putty-" + $puttyVersion + "-installer.msi"
-#		}
+		$puttyDownloadUrl = "https://the.earth.li/~sgtatham/putty/" + $puttyVersion + "/w64/putty-64bit-" + $puttyVersion + "-installer.msi"
 
 		Write-Output "Putty $puttyVersion installation in progress..."
 		$downloadDir = $downloadDir + "\putty\"

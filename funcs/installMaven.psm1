@@ -22,5 +22,6 @@ function Install-Maven
 	New-Item -Path $installDir -ItemType "directory" -Force
 	Write-Output "downloadedArchive: $downloadedArchive"
 	Write-Output "installDir: $installDir"
-	Expand-Archive -Force -path $downloadedArchive -destinationpath $installDir
+#	Expand-Archive -Force -path $downloadedArchive -destinationpath $installDir
+	Unzip $downloadedArchive $installDir
 }

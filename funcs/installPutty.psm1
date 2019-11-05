@@ -24,7 +24,7 @@ function Install-Putty
 	$installDirParam = "INSTALLDIR=$installDir"
 	$installParams = '/i', $installer,
 			$installDirParam,
-          '/qb!'
+			'/qb!'
 	Write-Output "putty install parameters: $installParams"
 	$p = Start-Process 'msiexec.exe' -ArgumentList $installParams -NoNewWindow -Wait -PassThru
 	$p.ExitCode
