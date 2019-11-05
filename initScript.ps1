@@ -3,7 +3,7 @@ try {
 	#Download-Java
 	#Install-Java
 	Download-Maven
-	#Install-Maven
+	Install-Maven
 	Download-Putty
 	Install-Putty
 

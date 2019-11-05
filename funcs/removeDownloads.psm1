@@ -9,10 +9,8 @@ function Remove-Downloads
 	} catch [FormatException] {
 		$removeDownloads = $false
 	}
-	Write-Output "removeDownloads: $removeDownloads"
 	if($removeDownloads) {
-		Write-Output "downloadDir: $downloadDir"
+		Write-Output "downloadDir to remove: $downloadDir"
 		Remove-Item -Path $downloadDir -Recurse
-#		Get-ChildItem -Path $downloadDir -Include * File -Recurse | foreach { $_.Delete()}
 	}
 }
