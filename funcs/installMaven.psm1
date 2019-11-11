@@ -24,4 +24,12 @@ function Install-Maven
 	Write-Output "installDir: $installDir"
 #	Expand-Archive -Force -path $downloadedArchive -destinationpath $installDir
 	Unzip $downloadedArchive $installDir
+
+	$mavenHome = Get-ChildItem -Path $installDir -Filter apache-maven*
+	$mavenHome = $installDir + $mavenHome
+	SetEnvVarIfAbsent "MAVEN_HOME" $mavenHome
+	SetEnvVarIfAbsent "M2_HOME" $mavenHome
+
+	AddJavaHomeToPathIfAbsent
+	AddMavenHomeToPathIfAbsent
 }
