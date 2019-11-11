@@ -27,5 +27,6 @@ function Install-Java
 
 	$javaHome = Get-ChildItem -Path $installDir -Filter jdk*
 	$javaHome = $installDir + $javaHome
-	SetEnvVarIfAbsent "JAVA_HM" $javaHome
+	SetEnvVarIfAbsent "JAVA_HOME" $javaHome
+	AddJavaHomeToPathIfAbsent
 }
