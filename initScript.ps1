@@ -1,5 +1,7 @@
 '.\funcs\*' | gci -include '*.psm1' | Import-Module
 try {
+	Download-Git
+	Install-Git
 	Download-Java
 	Install-Java
 	Download-Maven
